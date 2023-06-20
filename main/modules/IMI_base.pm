@@ -73,13 +73,13 @@ sub getDir {
     my $ipDir = &getIpDir($index);
     if ( -f "$ipDir/hwName" ) {
       my $hwName = catFileLine("$ipDir/hwName");
-      $sourceDir = "$SIMparam{'SIMhardwareInfoDir'}/$hwName";
+      $sourceDir = "$IMparam{'SIMhardwareInfoDir'}/$hwName";
     }
   } elsif ( $source eq "fmac" ) {
     $sourceDir = &getLogMacDir($index);
   } elsif ( $source eq "mac" ) {
     my ( $macAddr, $magType ) = &getMacAddr( $index );
-    $sourceDir = "$SIMparam{'SIMmacDatab'}/$macAddr";;
+    $sourceDir = "$IMparam{'SIMmacDatab'}/$macAddr";;
   } elsif ( $source eq "dev" ) {
     $sourceDir = &getDevDir($index);
   } elsif ( $source eq "importedDev" ) {
@@ -92,7 +92,7 @@ sub getDir {
     }
     if ( $hostname ne "" ) {
       my ( $shortName, $dummy ) = split('\.', $hostname);
-      $sourceDir = "$SIMparam{'SIMdeviceCmdb'}/$shortName";
+      $sourceDir = "$IMparam{'SIMdeviceCmdb'}/$shortName";
     }
   } elsif ( $source eq "oid" ) {
     my $ipDir = &getIpDir($index);
@@ -100,10 +100,10 @@ sub getDir {
     if ( -f $oidFile ) {
       my $oidInfo = catFileLine($oidFile);
       my ( $oidId, $oidNum ) = split(' ', $oidInfo);
-      $sourceDir = "$SIMparam{'SIMoidDir'}/.$oidNum";
+      $sourceDir = "$IMparam{'SIMoidDir'}/.$oidNum";
     }
   } elsif ( $source eq "logMsg" ) {
-    $sourceDir = "$SIMparam{'QRIlogMessages'}/$index";
+    $sourceDir = "$IMparam{'QRIlogMessages'}/$index";
   }
   $locationCache{"$source $index"} = $sourceDir;
   return($sourceDir);

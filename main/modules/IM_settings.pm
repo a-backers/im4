@@ -22,7 +22,7 @@ if ( $ENV{'IM_BASEDIR'} ) {
   exit;
 }
 
-$IMparam{'IMmainDir' = "$IMparam{'IMbaseDir'}/main";
+$IMparam{'IMmainDir'} = "$IMparam{'IMbaseDir'}/main";
 $IMparam{'IMmainConfigDir'} = "$IMparam{'IMmainDir'}/configs";
 $IMparam{'IMsystemDir'} = "$IMparam{'IMbaseDir'}/system";
 $IMparam{'IMsystemConfigDir'} = "$IMparam{'IMsystemDir'}/cmdb/configs";

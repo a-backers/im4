@@ -5,3 +5,4 @@ git reset --hard FETCH_HEAD
 git clean -df
 
 chmod +x ./updatemap.sh
+chmod +x ./im4*

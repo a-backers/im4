@@ -28,7 +28,7 @@ BEGIN {
   }
 
   $ENV{'IMDomain'} = $domain;
-  my $IMbaseDir = $ENV{'IM_BASEDIR'} || die "Oops, could not find env for IM_BASEDIR";
+  my $IMbaseDir = $ENV{'IM4_BASEDIR'} || die "Oops, could not find env for IM_BASEDIR";
   $ENV{'PERL5LIB'} = "$IMbaseDir/main/modules";
   our $IMstarterAction = "$action";
 }

@@ -3,7 +3,7 @@
 use strict;
 
 #doc Starter script for background tasks. Can be tested from the extra => starter
-use lib "../modules"
+use lib "../modules";
 use IMI_base;
 use IM_settings;
 use IM_base;

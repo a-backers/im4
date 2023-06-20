@@ -1,0 +1,50 @@
+#doc config stuff voor de QResponse schil en basis settings 
+SIM_BASEDIR=/var/sipman3
+SIM_DATADIR=/var/sipman3/data
+SIM_SHAREDDIR=/var/sipman3/shared
+SIM_USERSETTINGSDIR=/var/sipman3/shared/hist/usersettings
+# Glimmer 
+GLM_DATA=/usr/local/glimmer3_server/data
+# QResponse
+QR_CGI=/QR/cgi/QResponse.cgi
+QR_DATA=/QR/data
+QR_BASEDIR=/var/qresponse
+QR_MAINDIR=/var/qresponse/main
+QR_MENUDIR=/var/qresponse/main/menu
+QR_HEADEROPTS=/var/qresponse/main/headerOptions
+QR_HELPDIR=/var/qresponse/main/help
+QR_BUGDIR=/var/qresponse/shared/cmdb/bugs
+QR_BUGTOOL=/var/sipman3/main/bin/makeBug.pl
+QR_UPDATER=/var/sipman3/main/plugins/testAuthenticator.pl
+QR_EXITOK=5
+QRDlevel=8
+PERL5LIB=/var/sipman3/main/modules
+PASSWD_DIR=/var/sipman3/shared/cmdb/passwd
+# colors for pages and menus 
+QR_STYLESHEET=/sipman3/css/stylesheet.txt /sipman3/css/theme.glimmer.css
+QR_L1_BACK=#0A0A0A
+QR_L1_LINK=#EEEEEE
+QR_L1_TEXT=#DDDDDD
+QR_L2_BACK=#B2B2B2
+QR_L2_LINK=#111144
+QR_L2_TEXT=#222222
+QR_L3_BACK=#C2C2C2
+QR_L3_LINK=#000044
+QR_L3_TEXT=#222222
+QR_L4_BACK=#D2D2D2
+QR_L4_LINK=#111144
+QR_L4_TEXT=#222222
+QR_L5_BACK=#E2E2E2
+QR_L5_LINK=#111144
+QR_L5_TEXT=#222222
+QR_L6_BACK=#F2F2F2
+QR_L6_LINK=#111144
+QR_L6_TEXT=#222222
+QR_L7_BACK=#F8F8F8
+QR_L7_LINK=#111144
+QR_L7_TEXT=#222222
+QR_TXT_BACK=#F0F0F0
+#QR_TXT_LINK=#000000
+#QR_TXT_LINK=MidnightBlue 
+QR_TXT_LINK=Navy
+QR_TXT_TEXT=#111111

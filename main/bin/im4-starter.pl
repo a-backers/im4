@@ -70,14 +70,14 @@ sub runProg {
   my $progOption = shift;
   my $maxProg = shift;
   my $verbose = shift;
-  my $logdir = "$IMparam{'IMlogDir'}/pl-$action";
+#  my $logdir = "$IMparam{'IMlogDir'}/pl-$action";
   my $logfile = "$logdir/$action";
 
-  chomp($IMparam{'IMhostname'});
-  my $tmpLog = "$logfile.0000.$IMparam{'IMhostname'}.$$";
-  if ( -f $tmpLog ) {
-    unlink $tmpLog;
-  }
+#  chomp($IMparam{'IMhostname'});
+#  my $tmpLog = "$logfile.0000.$IMparam{'IMhostname'}.$$";
+#  if ( -f $tmpLog ) {
+#    unlink $tmpLog;
+#  }
 
   my @paramInfo = &catFileArray($IMparam{'QRIsipmanStarterCfg'});
   printDebug(0, "runProg: paramInfo = $#paramInfo, action=$action");

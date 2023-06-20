@@ -2,25 +2,23 @@
 
 use strict;
 
-#doc Starter script for background tasks. Can be tested from the extra => starter
 use lib "../modules";
 use IMI_base;
 use IM_settings;
 use IM_base;
 
-# these vars need to be set here also??
-my $action = $ARGV[0];
-my $domain = $ARGV[1];
+
+##### Do something before everything else
 BEGIN {
-  #doc BEGIN: run this code first, to set the env before the rest.
-  # These settings do not seem to be imported in the rest.
   my $action = $ARGV[0];
   my $domain = $ARGV[1];
-  # get the env stuff from the IM4 config file.
+
+  # get the env stuff from the config file.
   my $file = "../configs/im.conf";
   open (IN, $file) || die("BEGIN: cannot open $file.");
   my @lines = <IN>;
   close IN;
+
   foreach my $regel (@lines) {
     chomp $regel;
     my ( $varName, $info ) = split('=', $regel);
@@ -28,25 +26,27 @@ BEGIN {
       $ENV{$varName} = $info; 
     }
   }
-  # env stuff for the uses later on.
-  $ENV{'IM_MANDOMAIN'} = $domain; # old setting
-  $ENV{'QRDomain'} = $domain;
+
+  $ENV{'IMDomain'} = $domain;
   my $IMbaseDir = $ENV{'IM_BASEDIR'} || die "Oops, could not find env for IM_BASEDIR";
   $ENV{'PERL5LIB'} = "$IMbaseDir/main/modules";
   our $IMstarterAction = "$action";
 }
 
+my $action = $ARGV[0];
+my $domain = $ARGV[1];
 my $verbose = $ARGV[2];
 my ( $progName, $progOption );
 
-# subs
-#
 
+##### SUB PROGRAMS
 sub logRotate {
   #doc rotate the logfiles, retaining 50 versions
   my $fileName = shift;
   my @nums = ( 1 .. 50 );
+
   @nums = reverse @nums;
+
   foreach my $entry (@nums) {
     my $more = $entry + 1;
     my $formatEntry = sprintf("%04d", $entry);
@@ -72,11 +72,13 @@ sub runProg {
   my $verbose = shift;
   my $logdir = "$IMparam{'IMlogDir'}/pl-$action";
   my $logfile = "$logdir/$action";
+
   chomp($IMparam{'IMhostname'});
   my $tmpLog = "$logfile.0000.$IMparam{'IMhostname'}.$$";
   if ( -f $tmpLog ) {
     unlink $tmpLog;
   }
+
   my @paramInfo = &catFileArray($IMparam{'QRIsipmanStarterCfg'});
   printDebug(0, "runProg: paramInfo = $#paramInfo, action=$action");
   foreach my $line (@paramInfo) {
@@ -88,6 +90,7 @@ sub runProg {
       }
     }
   }
+
   printDebug( 0, "progName:$progName, progOption:$progOption, maxProg:$maxProg");
   my $testName = $progName;
   if ( $progOption ne "" ) {
@@ -96,7 +99,7 @@ sub runProg {
     $testName = "$progName $progOption";
   }
   
-  # old test based on ps info, does not work in an docker / multi server environment
+# old test based on ps info, does not work in an docker / multi server environment
 # my @currPs = `ps -ef | grep \"$testName\" | grep -v $IMparam{'QRIrunCmd'} | grep -v grep `;
 # my $currRunning = @currPs;
 
@@ -167,16 +170,23 @@ sub runProg {
   }
   system(" mv $tmpLog $logfile ");
 }
-# main
+
+
+##### MAIN PROGRAM
 #printDebug( 0, "env:\n");
 #system(" env ");
 printDebug( 0, "im4-starter.pl action:\"$action\" domain:\"$domain\" verbose:\"$verbose\" IMmanDomain:\"$IMparam{'IMmanDomain'}\".");
+
 $ENV{'REMOTE_USER'} = "starter-$action";
 $ENV{'USERLEVEL'} = "6";
+
+##### DO WE HAVE SOMETHING TO DO
 if ( "$action" eq "" ) {
   print("im4-starter.pl <action> <domain> <verbose>\n");
 } elsif ( "$domain" eq "" ) {
   printDebug(0, "Main: domain not defined");
+
+##### TEST ENV COMMAND
 } elsif ( "$action" eq "testEnv" ) {
   print("<PRE>");
   foreach my $k (sort keys %IMparam) {
@@ -184,6 +194,8 @@ if ( "$action" eq "" ) {
     print("$k =&gt; $v\n");
   }
   print("</PRE>");
+
+##### REGULAR COMMANDS
 } elsif ( "$action" eq "compressLogFiles" ) {
   runProg( $action,  $IMparam{'QRIcompressFiles'}, "", "0", $verbose );
 } elsif ( "$action" eq "snmpTrapd" ) {

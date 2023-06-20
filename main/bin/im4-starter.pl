@@ -1,9 +1,10 @@
 #!/usr/bin/perl
 
-#doc Starter script for background tasks. Can be tested from the extra => starter
-
 use strict;
-use QRI_base;
+
+#doc Starter script for background tasks. Can be tested from the extra => starter
+use lib "../modules"
+use IMI_base;
 use IM_settings;
 use IM_base;
 
@@ -16,7 +17,7 @@ BEGIN {
   my $action = $ARGV[0];
   my $domain = $ARGV[1];
   # get the env stuff from the IM4 config file.
-  my $file = "im.conf";
+  my $file = "../configs/im.conf";
   open (IN, $file) || die("BEGIN: cannot open $file.");
   my @lines = <IN>;
   close IN;

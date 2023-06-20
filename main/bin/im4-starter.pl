@@ -4,8 +4,8 @@ use strict;
 
 use lib "../modules";
 use IMI_base;
-#use IM_settings;
-#use IM_base;
+use IM_settings;
+use IM_base;
 
 
 ##### Do something before everything else

@@ -12,27 +12,26 @@ our @EXPORT	= qw( runCmd getFileLocation %locationCache exitOk
 our @VERSION	= 0.1;			# version number
 
 # keep this on top for error handling
-BEGIN { 
-    #doc Simple error handler, dumps data in readable format
-    #future versions will only do this for developers.
-    use CGI::Carp qw(fatalsToBrowser set_message);
-    sub handle_errors { 
-        my $msg = shift; 
-        print("<CENTER><P><P><TABLE><TR BGCOLOR=yellow><TD>");
-        my $me = $ENV{'REMOTE_USER'} ? $ENV{'REMOTE_USER'} : "UNKNOWN"; 
-
-        # dump a simple message... 
-        print "<h1>Sorry, you found an bug.</h1>\n"; 
-        print "Something whent wrong when running $0 " . join(' ', @ARGV) . "\n"; 
-        print("<HR><PRE>$msg</PRE><HR>");
-        print "Please bug your developper to fix the problem\n"; 
-        my $dummy = shift(@ARGV);
-        my $argList = join('\+', @ARGV);
-        system(" $ENV{'QR_BUGTOOL'} autoBug $argList none cgiError: bug found in $0 subDetails: $msg");
-        print "</TD></TR></TABLE>>\n"; 
-    } 
-    set_message(\&handle_errors);
-}
+#BEGIN { 
+#    #doc Simple error handler, dumps data in readable format
+#    #future versions will only do this for developers.
+#    use CGI::Carp qw(fatalsToBrowser set_message);
+#    sub handle_errors { 
+#        my $msg = shift; 
+#        print("<CENTER><P><P><TABLE><TR BGCOLOR=yellow><TD>");
+#        my $me = $ENV{'REMOTE_USER'} ? $ENV{'REMOTE_USER'} : "UNKNOWN";
+#        # dump a simple message... 
+#        print "<h1>Sorry, you found an bug.</h1>\n"; 
+#        print "Something whent wrong when running $0 " . join(' ', @ARGV) . "\n"; 
+#        print("<HR><PRE>$msg</PRE><HR>");
+#        print "Please bug your developper to fix the problem\n"; 
+#        my $dummy = shift(@ARGV);
+#        my $argList = join('\+', @ARGV);
+#        system(" $ENV{'QR_BUGTOOL'} autoBug $argList none cgiError: bug found in $0 subDetails: $msg");
+#        print "</TD></TR></TABLE>>\n"; 
+#    } 
+#    set_message(\&handle_errors);
+#}
 
 sub exitOk {
   print("\n<!-- exitOk -->\n");

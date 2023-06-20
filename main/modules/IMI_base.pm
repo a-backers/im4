@@ -1,8 +1,8 @@
 package IMI_base;
 
 use strict;
-use IM_base;
-use IM_settings;
+#use IM_base;
+#use IM_settings;
 require Exporter;
 
 our @ISA 	= ("Exporter");

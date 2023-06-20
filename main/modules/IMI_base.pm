@@ -1,4 +1,4 @@
-package QRI_base;
+package IMI_base;
 
 use strict;
 use IM_base;
@@ -35,9 +35,9 @@ BEGIN {
 }
 
 sub exitOk {
-  #doc Simple exit routine to check exits and allow return of variables.
   print("\n<!-- exitOk -->\n");
-  exit($ENV{'IM4_EXITOK'});
+  exit(5);
+#  exit($ENV{'IM4_EXITOK'});
 }
 
 sub runCmd {

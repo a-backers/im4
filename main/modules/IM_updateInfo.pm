@@ -1,11 +1,11 @@
-package SIM_updateInfo;
+package IM_updateInfo;
 
 #doc Module for updating nodes and reccords in an standardized way
 #
 require Exporter;
-use SIM_settings;
-use SIM_base;
-use SIM_nodeInfo;
+use IM_settings;
+use IM_base;
+use IM_nodeInfo;
 
 our @ISA 	= ("Exporter");
 our @EXPORT	= qw( 

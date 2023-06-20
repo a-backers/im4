@@ -1,8 +1,7 @@
 package IM_settings;
-require Exporter;
 
 use strict;
-
+require Exporter;
 
 # Settings module for shared perl settings.
 our @ISA        = ("Exporter");
@@ -228,4 +227,3 @@ if ( -f "$IMparam{'IMsharedConfDir'}/cronJobs" ) {
 
 # end.
 1;
-

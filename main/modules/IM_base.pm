@@ -1,10 +1,9 @@
-package SIM_base;
+package IM_base;
 
-#
 use strict;
 require Exporter;
-use SIM_settings;
-#use SIM_nodeInfo;
+use IM_settings;
+#use IM_nodeInfo;
 use Net::DNS;
 use Net::Syslog;
 use CGI qw(param);

@@ -62,10 +62,26 @@ sub logRotate {
   system(" mv $fileName $fileName.$formatFirst 2>&1 ");
 }
 
+sub runProg {
+  #doc Test howmany versions are already running and start the program if allowed
+  #doc syntax: <action> <progName> <progOption> <maxProg> <verbose>
+  my $action = shift;
+  my $progName = shift;
+  my $progOption = shift;
+  my $maxProg = shift;
+  my $verbose = shift;
+#  my $logdir = "$IMparam{'IMlogDir'}/pl-$action";
+  my $logfile = "$logdir/$action";
+
+#  chomp($IMparam{'IMhostname'});
+#  my $tmpLog = "$logfile.0000.$IMparam{'IMhostname'}.$$";
+#  if ( -f $tmpLog ) {
+#    unlink $tmpLog;
+#  }
+}
+
 
 ##### MAIN PROGRAM
-#printDebug( 0, "env:\n");
-#system(" env ");
 printDebug( 0, "im4-starter.pl action:\"$action\" domain:\"$domain\" verbose:\"$verbose\" IMmanDomain:\"$IMparam{'IMmanDomain'}\".");
 
 $ENV{'REMOTE_USER'} = "starter-$action";

@@ -1,6 +1,8 @@
 #!/usr/bin/perl
 
 use strict;
+
+use lib "../modules";
 use IM_settings;
 use IM_base;
 use IM_updateInfo;
@@ -20,4 +22,5 @@ sub scanRange {
 }
 
 
+##### MAIN PROGRAM
 &scanRange;

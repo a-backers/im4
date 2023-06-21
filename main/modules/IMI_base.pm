@@ -7,8 +7,8 @@ require Exporter;
 
 our @ISA     = ("Exporter");
 our @EXPORT	 = qw( 
-                  exitOk
-              );
+                    exitOk
+                 );
 our @VERSION = 0.1;
 
 sub exitOk {

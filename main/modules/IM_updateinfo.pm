@@ -10,7 +10,7 @@ require Exporter;
 our @ISA 	 = ("Exporter");
 our @EXPORT	 = qw( 
                  );
-our @VERSION = 0.01;
+our @VERSION = 0.1;
 
 
 ##### MAIN EXIT

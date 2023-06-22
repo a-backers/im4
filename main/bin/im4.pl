@@ -13,13 +13,13 @@ BEGIN {
   my @lines = <IN>;
   close IN;
 
-  print("BEGIN: Fill env; in loop");
+  print("BEGIN: Fill env; in loop\n");
   foreach my $regel (@lines) {
     chomp $regel;
     my ( $varName, $info ) = split('=', $regel);
     if ( substr($varName, 0, 1) ne "#" ) {
       $ENV{$varName} = $info;
-      print("ENV Line= $info");
+      print("ENV Line= $info\n");
     }
   }
   
@@ -28,6 +28,7 @@ BEGIN {
 
   print("ENV: $ENV{'IMDomain'}\n");
   print("ENV: $ENV{'HOSTNAME'}\n");
+  
 }
 
 0;

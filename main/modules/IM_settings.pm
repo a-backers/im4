@@ -36,7 +36,7 @@ if ( $ENV{'IM4_BASEDIR'} ) {
   $IMparam{'IMbaseDir'} = $ENV{'IM4_BASEDIR'}; 
 } else {
 #  printDebug(0, "IMbaseDir not set, exiting");
-  exit;
+#  exit;
 }
 $IMparam{'IMmainDir'} = "$IMparam{'IMbaseDir'}/main";
 $IMparam{'IMmainConfigDir'} = "$IMparam{'IMmainDir'}/configs";
@@ -45,8 +45,8 @@ $IMparam{'IMsystemConfigDir'} = "$IMparam{'IMsystemDir'}/cmdb/configs";
 $IMparam{'IMsharedDir'} = "$IMparam{'IMbaseDir'}/shared";
 $IMparam{'IMsharedConfDir'} = "$IMparam{'IMsharedDir'}/cmdb/configs";
 if (( $IMparam{'IMmanDomain'} eq "" ) or ( ! -d "$IMparam{'IMbaseDir'}/data/$IMparam{'IMmanDomain'}" )) {
-  print("IM_settings: sorry, IMmanDomain not found ($IMparam{'IMmanDomain'}).");
-  exit;
+#  print("IM_settings: sorry, IMmanDomain not found ($IMparam{'IMmanDomain'}).");
+#  exit;
 } 
 $IMparam{'IMhostname'} = `/bin/hostname`;
 $IMparam{'IMdataDir'} = "$IMparam{'IMbaseDir'}/data/$IMparam{'IMmanDomain'}";

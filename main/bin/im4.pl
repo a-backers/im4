@@ -2,6 +2,9 @@
 
 use strict;
 
+use lib "../modules";
+use IM_base;
+
 BEGIN {
   my $action = $ARGV[0];
   my $domain = $ARGV[1];
@@ -30,6 +33,10 @@ BEGIN {
 }
 
 my ( $progName, $progOption );
+
+
+
+
 
 print("ENV: $ENV{'IMDomain'}\n");
 print("ENV: $ENV{'IM4_BASEDIR'}\n");

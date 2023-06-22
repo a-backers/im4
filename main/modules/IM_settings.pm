@@ -39,7 +39,7 @@ if ( $ENV{'IM4_BASEDIR'} ) {
   printDebug(0, "IMbaseDir not set, exiting");
   exit;
 }
-$IMparam{'IMmainDir' = "$IMparam{'IMbaseDir'}/main";
+$IMparam{'IMmainDir'} = "$IMparam{'IMbaseDir'}/main";
 $IMparam{'IMmainConfigDir'} = "$IMparam{'IMmainDir'}/configs";
 $IMparam{'IMsystemDir'} = "$IMparam{'IMbaseDir'}/system";
 $IMparam{'IMsystemConfigDir'} = "$IMparam{'IMsystemDir'}/cmdb/configs";

@@ -23,7 +23,8 @@ BEGIN {
     chomp $regel;
     my ( $varName, $info ) = split('=', $regel);
     if ( substr($varName, 0, 1) ne "#" ) {
-      $ENV{$varName} = $info; 
+      $ENV{$varName} = $info;
+      print("ENV Line= $info");
     }
   }
 

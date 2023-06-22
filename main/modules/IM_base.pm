@@ -1,11 +1,10 @@
 package IM_base;
 
 use strict;
-use IM_settings;
-
 require Exporter;
 
-# Settings module for shared perl settings.
+use IM_settings;
+
 our @ISA     = ("Exporter");
 our @EXPORT  = qw(
                     printDate printDebug

@@ -65,22 +65,22 @@ $ENV{'REMOTE_USER'} = "starter-$action";
 $ENV{'USERLEVEL'} = "6";
 
 ##### DO WE HAVE SOMETHING TO DO
-if ( "$action" eq "" ) {
-  print("im4-starter.pl <action> <domain> <verbose>\n");
-} elsif ( "$domain" eq "" ) {
-  printDebug(0, "Main: domain not defined");
-
-##### TEST ENV COMMAND
-} elsif ( "$action" eq "testEnv" ) {
-  print("<PRE>");
-  foreach my $k (sort keys %IMparam) {
-    my $v = $IMparam{$k};
-    print("$k =&gt; $v\n");
-  }
-  print("</PRE>");
-} else {
-  print("Oops, action $action not found");
-}
+#if ( "$action" eq "" ) {
+#  print("im4-starter.pl <action> <domain> <verbose>\n");
+#} elsif ( "$domain" eq "" ) {
+#  printDebug(0, "Main: domain not defined");
+#
+###### TEST ENV COMMAND
+#} elsif ( "$action" eq "testEnv" ) {
+#  print("<PRE>");
+#  foreach my $k (sort keys %IMparam) {
+#    my $v = $IMparam{$k};
+#    print("$k =&gt; $v\n");
+#  }
+#  print("</PRE>");
+#} else {
+#  print("Oops, action $action not found");
+#}
 
 #&exitOk();
 0;

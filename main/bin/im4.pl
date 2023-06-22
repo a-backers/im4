@@ -30,6 +30,9 @@ BEGIN {
   our $IMstarterAction = "$action";
 }
 
+my $action = $ARGV[0];
+my $domain = $ARGV[1];
+my $verbose = $ARGV[2];
 my ( $progName, $progOption );
 
 

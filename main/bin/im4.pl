@@ -19,7 +19,6 @@ BEGIN {
     my ( $varName, $info ) = split('=', $regel);
     if ( substr($varName, 0, 1) ne "#" ) {
       $ENV{$varName} = $info;
-      print("ENV Line= $info\n");
     }
   }
   
@@ -28,7 +27,8 @@ BEGIN {
 
   print("ENV: $ENV{'IMDomain'}\n");
   print("ENV: $ENV{'HOSTNAME'}\n");
-  
+  print("ENV: $ENV{'IM4_BASEDIR'}\n");
+  print("ENV: $ENV{'IM4_HELPDIR'}\n");
 }
 
 0;

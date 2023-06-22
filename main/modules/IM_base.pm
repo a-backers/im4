@@ -1,7 +1,7 @@
 package IM_base;
 
 use strict;
-use IM_settings;
+#use IM_settings;
 
 require Exporter;
 

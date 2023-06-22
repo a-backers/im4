@@ -4,16 +4,12 @@ use strict;
 
 use lib "../modules";
 use IM_base;
-use IM_settings;
 
 BEGIN {
   my $action = $ARGV[0];
   my $domain = $ARGV[1];
   my $verbose = $ARGV[2];
 
-
-
-  # get the env stuff from the config file.
   my $file = "../configs/im.conf";
   open (IN, $file) || die("BEGIN: cannot open $file.");
   my @lines = <IN>;

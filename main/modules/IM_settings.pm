@@ -1,6 +1,8 @@
 package IM_settings;
 
 use strict;
+
+use lib "../modules";
 use IM_base;
 
 require Exporter;
@@ -27,7 +29,7 @@ if ( $ENV{'REMOTE_USER'} ) {
 }
 our $userLevel = $ENV{'USERLEVEL'};
 our %IMparam = ();
-our $debugging;
+our $debugging = "yes";
 
 $IMparam{'IMmanDomain'} = $ENV{'IM4_MANDOMAIN'};
 if ( $IMparam{'IMmanDomain'} eq "" ) {

@@ -13,22 +13,7 @@ our @EXPORT  = qw(
 our @VERSION = 0.1; 
 
 
-sub printDebug {
-  my $level = shift;
-  my $string = shift;
-  my $outputType = shift;
-
-  if (( "$level" eq "0" ) or ( "$debugging" eq "yes" )) {
-    my $now = time;
-    my $dateStr = printDate( $now, "hhmmss" );
-    if ( defined $outputType && $outputType eq "html" ) {
-      print("$string");
-    } else {
-      print("<BR>   <B>$dateStr: $string</B> ");
-    }
-  }
-}
-
+##### SUB PROGRAMS
 sub printDate {
   my $timestamp = shift;
   my $paramType = shift;
@@ -55,5 +40,21 @@ sub printDate {
     return("$wday");
   } else {
     return("$jaar\-$z2[$mon]\-$z2[$mday] $z2[$hour]\:$z2[$min]\:$z2[$sec]");
+  }
+}
+
+sub printDebug {
+  my $level = shift;
+  my $string = shift;
+  my $outputType = shift;
+
+  if (( "$level" eq "0" ) or ( "$debugging" eq "yes" )) {
+    my $now = time;
+    my $dateStr = printDate( $now, "hhmmss" );
+    if ( defined $outputType && $outputType eq "html" ) {
+      print("$string");
+    } else {
+      print("<BR>   <B>$dateStr: $string</B> ");
+    }
   }
 }

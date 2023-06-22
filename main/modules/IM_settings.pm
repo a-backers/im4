@@ -1,18 +1,18 @@
 package IM_settings;
 
 use strict;
-require Exporter;
+#require Exporter;
 
 use IM_base;
 
 # Settings module for shared perl settings.
-our @ISA     = ("Exporter");
-our @EXPORT  = qw(
-                    $httpScriptName $remoteUser $userLevel
-                    $debugging
-                    %IMparam
-                 );
-our @VERSION = 0.1; 
+#our @ISA     = ("Exporter");
+#our @EXPORT  = qw(
+#                    $httpScriptName $remoteUser $userLevel
+#                    $debugging
+#                    %IMparam
+#                 );
+#our @VERSION = 0.1; 
 
 
 ##### Exported environment settings

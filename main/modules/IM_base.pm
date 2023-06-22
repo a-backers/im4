@@ -1,15 +1,15 @@
 package IM_base;
 
 use strict;
-require Exporter;
+#require Exporter;
 
 use IM_settings;
 
-our @ISA     = ("Exporter");
-our @EXPORT  = qw(
-                    printDate printDebug
-                 );
-our @VERSION = 0.1; 
+#our @ISA     = ("Exporter");
+#our @EXPORT  = qw(
+#                    printDate printDebug
+#                 );
+#our @VERSION = 0.1; 
 
 
 ##### SUB PROGRAMS

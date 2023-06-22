@@ -1,8 +1,6 @@
 package IM_settings;
 
 use strict;
-
-use IM_base;
 require Exporter;
 
 # Settings module for shared perl settings.
@@ -20,7 +18,7 @@ $IMparam{'IMmanDomain'} = $ENV{'IMDomain'};
 if ( $ENV{'IM_BASEDIR'} ) { 
   $IMparam{'IMbaseDir'} = $ENV{'IM_BASEDIR'}; 
 } else {
-  printDebug(0, "IMbaseDir not set, exiting");
+#  printDebug(0, "IMbaseDir not set, exiting");
   exit;
 }
 

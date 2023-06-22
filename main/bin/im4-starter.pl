@@ -13,12 +13,14 @@ BEGIN {
   my $action = $ARGV[0];
   my $domain = $ARGV[1];
 
+  print("BEGIN: Read CONF file");
   # get the env stuff from the config file.
   my $file = "../configs/im.conf";
   open (IN, $file) || die("BEGIN: cannot open $file.");
   my @lines = <IN>;
   close IN;
 
+  print("BEGIN: Fill env; in loop");
   foreach my $regel (@lines) {
     chomp $regel;
     my ( $varName, $info ) = split('=', $regel);
@@ -28,12 +30,14 @@ BEGIN {
     }
   }
 
+  print("BEGIN: Fill env; specials")
   $ENV{'IMDomain'} = $domain;
   my $IMbaseDir = $ENV{'IM4_BASEDIR'} || die "Oops, could not find env for IM_BASEDIR";
   $ENV{'PERL5LIB'} = "$IMbaseDir/main/modules";
   our $IMstarterAction = "$action";
 }
 
+##### VARIABLES
 my $action = $ARGV[0];
 my $domain = $ARGV[1];
 my $verbose = $ARGV[2];

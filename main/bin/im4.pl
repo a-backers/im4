@@ -4,6 +4,7 @@ use strict;
 
 use lib "../modules";
 use IM_base;
+use IM_settings;
 
 BEGIN {
   my $action = $ARGV[0];

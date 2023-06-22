@@ -1,6 +1,8 @@
 package IM_settings;
 
 use strict;
+use IM_base;
+
 require Exporter;
 
 # Settings module for shared perl settings.
@@ -21,14 +23,3 @@ if ( $ENV{'IM_BASEDIR'} ) {
 #  printDebug(0, "IMbaseDir not set, exiting");
   exit;
 }
-
-$IMparam{'IMmainDir'} = "$IMparam{'IMbaseDir'}/main";
-$IMparam{'IMmainConfigDir'} = "$IMparam{'IMmainDir'}/configs";
-$IMparam{'IMsystemDir'} = "$IMparam{'IMbaseDir'}/system";
-$IMparam{'IMsystemConfigDir'} = "$IMparam{'IMsystemDir'}/cmdb/configs";
-$IMparam{'IMsharedDir'} = "$IMparam{'IMbaseDir'}/shared";
-$IMparam{'IMsharedConfDir'} = "$IMparam{'SMsharedDir'}/cmdb/configs";
-
-
-##### MAIN EXIT
-1;

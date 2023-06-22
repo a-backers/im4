@@ -16,3 +16,6 @@ our @VERSION = 0.1;
 ##### Exported environment settings
 our %IMparam = ();
 our $debugging;
+
+##### MAIN EXIT
+1;

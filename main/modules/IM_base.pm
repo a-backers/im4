@@ -1,8 +1,8 @@
 package IM_base;
 
 use strict;
-use IM_settings;
 require Exporter;
+use IM_settings;
 
 # Settings module for shared perl settings.
 our @ISA     = ("Exporter");

@@ -78,7 +78,7 @@ if ( "$action" eq "" ) {
   print("<PRE>");
   foreach my $k (sort keys %IMparam) {
     my $v = $IMparam{$k};
-    print("$k =&gt; $v\n");
+    print("$k => $v\n");
   }
   print("</PRE>");
 } else {

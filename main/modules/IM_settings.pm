@@ -35,8 +35,8 @@ if ( $IMparam{'IMmanDomain'} eq "" ) {
 if ( $ENV{'IM4_BASEDIR'} ) { 
   $IMparam{'IMbaseDir'} = $ENV{'IM4_BASEDIR'}; 
 } else {
-#  printDebug(0, "IMbaseDir not set, exiting");
-#  exit;
+  printDebug(0, "IMbaseDir not set, exiting");
+  exit;
 }
 $IMparam{'IMmainDir'} = "$IMparam{'IMbaseDir'}/main";
 $IMparam{'IMmainConfigDir'} = "$IMparam{'IMmainDir'}/configs";

@@ -52,7 +52,7 @@ sub printDebug {
     my $now = time;
     my $dateStr = printDate( $now, "hhmmss" );
     if ( defined $outputType && $outputType eq "html" ) {
-      print("$string");
+      print("$string\n");
     } else {
       print("<BR>   <B>$dateStr: $string</B> ");
     }

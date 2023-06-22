@@ -3,7 +3,7 @@ package IM_settings;
 use strict;
 
 use lib "../modules";
-use IM_base;
+#use IM_base;
 
 require Exporter;
 
@@ -38,7 +38,7 @@ if ( $IMparam{'IMmanDomain'} eq "" ) {
 if ( $ENV{'IM4_BASEDIR'} ) { 
   $IMparam{'IMbaseDir'} = $ENV{'IM4_BASEDIR'}; 
 } else {
-  printDebug(0, "IMbaseDir not set, exiting");
+#  printDebug(0, "IMbaseDir not set, exiting");
   exit;
 }
 $IMparam{'IMmainDir'} = "$IMparam{'IMbaseDir'}/main";

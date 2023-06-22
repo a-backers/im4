@@ -54,7 +54,32 @@ $IMparam{'IMdataDir'} = "$IMparam{'IMbaseDir'}/data/$IMparam{'IMmanDomain'}";
 $IMparam{'IMdataConfDir'} = "$IMparam{'IMdataDir'}/cmdb/configs";
 $IMparam{'IMsystemDnsServers'} = "system";
 
+# set default dns servers
+if ( -r "/etc/resolv.conf" ) {
+  open ( RESO, "/etc/resolv.conf");
+  my @lines = <RESO>;
+  close RESO;
 
+  foreach my $line (@lines) {
+    my ( $type, $info ) = split(' ', $line);
+    if ( $type eq "nameserver" ) {
+      if ( $IMparam{'IMsystemDnsServers'} eq "system" ) {
+        $IMparam{'IMsystemDnsServers'} = $info;
+      } else {
+        $IMparam{'IMsystemDnsServers'} = "$IMparam{'IMsystemDnsServers'} $info";
+      }
+    }
+  }
+} else {
+  # if nothing is defined in resolv.conf, set it to 127.0.0.1.
+  $IMparam{'IMsystemDnsServers'} = "127.0.0.1";
+}
+
+my @fileList = ();
+push @fileList, "$IMparam{'IMmainConfigDir'}/settings2.conf\n";
+
+
+##### HIER BEN IK GEBLEVEN
 
 
 ##### MAIN EXIT

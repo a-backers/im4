@@ -1,8 +1,8 @@
 package IM_base;
 
 use strict;
+
 require Exporter;
-use IM_settings;
 
 # Settings module for shared perl settings.
 our @ISA     = ("Exporter");
@@ -14,8 +14,6 @@ our @VERSION = 0.1;
 
 
 sub printDebug {
-  #doc Print informational messages, for debugging or progress indication
-  #doc syntax: <level> <string> <outputType>
   my $level = shift;
   my $string = shift;
   my $outputType = shift;
@@ -30,6 +28,3 @@ sub printDebug {
     }
   }
 }
-
-##### MAIN EXIT
-1;

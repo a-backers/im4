@@ -3,7 +3,7 @@ package IM_settings;
 use strict;
 
 use lib "../modules";
-#use IM_base;
+use IM_base;
 
 require Exporter;
 

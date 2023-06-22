@@ -2,9 +2,6 @@ package IM_settings;
 
 use strict;
 
-#use lib "../modules";
-#use IM_base;
-
 require Exporter;
 
 # Settings module for shared perl settings.
@@ -85,4 +82,4 @@ push @fileList, "$IMparam{'IMmainConfigDir'}/settings2.conf\n";
 
 
 ##### MAIN EXIT
-1;
+#1;

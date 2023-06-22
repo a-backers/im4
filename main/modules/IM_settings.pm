@@ -8,6 +8,7 @@ require Exporter;
 # Settings module for shared perl settings.
 our @ISA     = ("Exporter");
 our @EXPORT  = qw(
+                    $debugging
                     %IMparam
                  );
 our @VERSION = 0.1; 
@@ -23,3 +24,5 @@ if ( $ENV{'IM_BASEDIR'} ) {
 #  printDebug(0, "IMbaseDir not set, exiting");
   exit;
 }
+
+our $debugging;

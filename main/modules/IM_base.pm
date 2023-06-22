@@ -1,7 +1,7 @@
 package IM_base;
 
 use strict;
-#use IM_settings;
+use IM_settings;
 
 require Exporter;
 
@@ -19,13 +19,13 @@ sub printDebug {
   my $string = shift;
   my $outputType = shift;
 
-#  if (( "$level" eq "0" ) or ( "$debugging" eq "yes" )) {
-#    my $now = time;
-#    my $dateStr = printDate( $now, "hhmmss" );
-#    if ( defined $outputType && $outputType eq "html" ) {
-#      print("$string");
-#    } else {
-#      print("<BR>   <B>$dateStr: $string</B> ");
-#    }
-#  }
+  if (( "$level" eq "0" ) or ( "$debugging" eq "yes" )) {
+    my $now = time;
+    my $dateStr = printDate( $now, "hhmmss" );
+    if ( defined $outputType && $outputType eq "html" ) {
+      print("$string");
+    } else {
+      print("<BR>   <B>$dateStr: $string</B> ");
+    }
+  }
 }

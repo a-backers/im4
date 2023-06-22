@@ -1,6 +1,8 @@
 package IM_settings;
 
 use strict;
+
+use IM_base;
 require Exporter;
 
 # Settings module for shared perl settings.

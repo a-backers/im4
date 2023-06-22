@@ -2,7 +2,6 @@
 
 use strict;
 
-use lib "../modules";
 use IM_base;
 
 BEGIN {
